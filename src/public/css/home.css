@@ -1,0 +1,176 @@
+/* ===============================
+   GOALMARKET ADMIN DASHBOARD
+================================= */
+
+.home-container {
+  position: relative;
+  width: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #06111f 0%, #0b3d2e 45%, #102f5f 100%);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.home-container a {
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+.home-container .admin-navbar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding-top: 24px;
+}
+
+.home-container .admin-navbar .nav {
+  gap: 18px;
+}
+
+.home-container .nav-item {
+  cursor: pointer;
+}
+
+.home-container .nav-link {
+  color: #f6dca8;
+  font-family: monospace;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: 0.2s ease;
+}
+
+.home-container .nav-link:hover,
+.home-container .nav-link.active {
+  color: #2cff9a;
+  transform: translateY(-1px);
+}
+
+/* DASHBOARD FRAME */
+.home-container .dashboard-frame {
+  position: relative;
+  width: 1320px;
+  max-width: 92%;
+  min-height: calc(100vh - 90px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 55px 0 90px;
+}
+
+.home-container .section-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: #2cff9a;
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.home-container .dashboard-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Source Serif Pro", serif;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.home-container .dashboard-text {
+  margin-top: 18px;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.home-container .dashboard-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 14px;
+}
+
+.home-container .dashboard-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 46px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.home-container .dashboard-btn.primary {
+  background: #00c853;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(0, 200, 83, 0.28);
+}
+
+.home-container .dashboard-btn.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.home-container .dashboard-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ANIMATION */
+.home-container .animation-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container .animation-wrapper {
+  position: relative;
+  width: 620px;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container .sphere-animation {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  filter: drop-shadow(0 26px 45px rgba(0, 0, 0, 0.35));
+}
+
+.home-container .sphere path {
+  fill: url(#sphereGradient);
+  stroke-width: 1px;
+  stroke: rgba(255, 255, 255, 0.18);
+  backface-visibility: hidden;
+}
+
+@media (max-width: 900px) {
+  .home-container .nav-link {
+    font-size: 24px;
+  }
+
+  .home-container .dashboard-frame {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home-container .dashboard-actions {
+    justify-content: center;
+  }
+
+  .home-container .animation-wrapper {
+    width: 100%;
+    height: auto;
+  }
+}

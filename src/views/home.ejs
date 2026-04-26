@@ -1,0 +1,85 @@
+<%- include('includes/header') %>
+
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
+
+<body>
+  <div class="home-container">
+    <nav class="admin-navbar">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="/admin/">Dashboard</a>
+        </li>
+        <% if(!member) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/login">Login</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/product/all">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/user/all">Users</a>
+        </li>
+        <li class="nav-item" onclick="return confirm('Do you want to logout?')">
+          <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <main class="dashboard-frame">
+      <section class="dashboard-info">
+        <% if(member) { %>
+          <span class="section-kicker">GOALMARKET ADMIN</span>
+          <h1 class="dashboard-title">Football Shop Dashboard</h1>
+          <!-- <p class="dashboard-text">Manage football products, users, and shop activity from one place.</p> -->
+        <% } else { %>
+          <span class="section-kicker">GOALMARKET</span>
+          <h1 class="dashboard-title">Admin Portal</h1>
+          <p class="dashboard-text">Please log in to manage products and users.</p>
+        <% } %>
+<!-- 
+        <% if(member) { %>
+        <div class="dashboard-actions">
+          <a class="dashboard-btn primary" href="/admin/product/all">Manage Products</a>
+          <a class="dashboard-btn secondary" href="/admin/user/all">Manage Users</a>
+        </div>
+        <% } %> -->
+      </section>
+
+      <section class="animation-frame">
+        <div class="animation-wrapper">
+          <div class="sphere-animation">
+            <svg class="sphere" viewBox="0 0 440 440" stroke="rgba(80,80,80,.35)">
+              <defs>
+                <linearGradient id="sphereGradient" x1="5%" x2="5%" y1="0%" y2="15%">
+                  <stop stop-color="#2cff9a" offset="0%" />
+                  <stop stop-color="#0b3d2e" offset="50%" />
+                  <stop stop-color="#06111f" offset="100%" />
+                </linearGradient>
+              </defs>
+              <path d="M361.604 361.238c-24.407 24.408-51.119 37.27-59.662 28.727-8.542-8.543 4.319-35.255 28.726-59.663 24.408-24.407 51.12-37.269 59.663-28.726 8.542 8.543-4.319 35.255-28.727 59.662z" />
+              <path d="M360.72 360.354c-35.879 35.88-75.254 54.677-87.946 41.985-12.692-12.692 6.105-52.067 41.985-87.947 35.879-35.879 75.254-54.676 87.946-41.984 12.692 12.692-6.105 52.067-41.984 87.946z" />
+              <path d="M357.185 356.819c-44.91 44.91-94.376 68.258-110.485 52.149-16.11-16.11 7.238-65.575 52.149-110.485 44.91-44.91 94.376-68.259 110.485-52.15 16.11 16.11-7.239 65.576-52.149 110.486z" />
+              <path d="M350.998 350.632c-53.21 53.209-111.579 81.107-130.373 62.313-18.794-18.793 9.105-77.163 62.314-130.372 53.209-53.21 111.579-81.108 130.373-62.314 18.794 18.794-9.105 77.164-62.314 130.373z" />
+              <path d="M343.043 342.677c-59.8 59.799-125.292 91.26-146.283 70.268-20.99-20.99 10.47-86.483 70.269-146.282 59.799-59.8 125.292-91.26 146.283-70.269 20.99 20.99-10.47 86.484-70.27 146.283z" />
+              <path d="M334.646 334.28c-65.169 65.169-136.697 99.3-159.762 76.235-23.065-23.066 11.066-94.593 76.235-159.762s136.697-99.3 159.762-76.235c23.065 23.065-11.066 94.593-76.235 159.762z" />
+              <path d="M324.923 324.557c-69.806 69.806-146.38 106.411-171.031 81.76-24.652-24.652 11.953-101.226 81.759-171.032 69.806-69.806 146.38-106.411 171.031-81.76 24.652 24.653-11.953 101.226-81.759 171.032z" />
+              <path d="M312.99 312.625c-73.222 73.223-153.555 111.609-179.428 85.736-25.872-25.872 12.514-106.205 85.737-179.428s153.556-111.609 179.429-85.737c25.872 25.873-12.514 106.205-85.737 179.429z" />
+              <path d="M300.175 299.808c-75.909 75.909-159.11 115.778-185.837 89.052-26.726-26.727 13.143-109.929 89.051-185.837 75.908-75.908 159.11-115.778 185.837-89.051 26.726 26.726-13.143 109.928-89.051 185.836z" />
+              <path d="M284.707 284.34c-77.617 77.617-162.303 118.773-189.152 91.924-26.848-26.848 14.308-111.534 91.924-189.15C265.096 109.496 349.782 68.34 376.63 95.188c26.849 26.849-14.307 111.535-91.923 189.151z" />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+<%- include('includes/footer') %>
